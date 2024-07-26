@@ -7,7 +7,7 @@ const userRoute=require('./api/routes/user')
 const bodyParser=require('body-parser');
 const fileUpload=require('express-fileupload');
 
-mongoose.connect('mongodb+srv://tobi:Yogi$456@cluster0.kcsiwae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://<username>:<password>@cluster0.kcsiwae.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(res=>{
     console.log('mongodb  connected');
 })
