@@ -8,9 +8,9 @@ const checkAuth=require('../middleware/checkAuth');
 const category = require('../model/category');
 
 cloudinary.config({
-    cloud_name:'drfhth4lh',
-    api_key:'992122297941914',
-    api_secret:'n2Eq_h8VScUxb63oZjrvpQBQIPk'
+    cloud_name:'<cloudname>',
+    api_key:'<apikey>',
+    api_secret:'<apisecret>'
 })
 
 ///add new blog
