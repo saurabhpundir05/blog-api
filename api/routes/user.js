@@ -4,6 +4,13 @@ const User = require('../model/user');
 const mongoose=require('mongoose');
 const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
+const rateLimit=require('express-rate-limit');
+
+const limiter=rateLimit({
+    windowMs:15*60*1000,
+    max:3,
+    message:"too many request from this ip"
+})
 
 //signup
 router.post('/signup',(req,res)=>{
@@ -38,7 +45,7 @@ router.post('/signup',(req,res)=>{
 })
 
 //login
-router.post('/login',(req,res)=>{
+router.post('/login',limiter,(req,res)=>{
     User.find({email:req.body.email})
     .then(user=>{
         if(user.length<1){
